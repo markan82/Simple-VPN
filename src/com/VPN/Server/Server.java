@@ -208,6 +208,12 @@ public class Server implements CryptoInterface {
 		catch(Exception e )
 		{
 			m_gui.connectionClosed();;
+		} finally {
+			try {
+				connectionSocket.close();
+			} catch (IOException e) {
+				e.printStackTrace();
+			}
 		}
 	}
 	
