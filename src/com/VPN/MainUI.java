@@ -1,4 +1,4 @@
-package com.EECE412A3;
+package com.VPN;
 
 import java.awt.FlowLayout;
 import java.awt.event.ActionEvent;

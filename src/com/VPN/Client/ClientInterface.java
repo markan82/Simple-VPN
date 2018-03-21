@@ -1,4 +1,4 @@
-package com.EECE412A3.Client;
+package com.VPN.Client;
 
 public interface ClientInterface {
 

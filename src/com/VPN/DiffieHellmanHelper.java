@@ -1,5 +1,5 @@
 
-package com.EECE412A3;
+package com.VPN;
 import java.security.AlgorithmParameterGenerator;
 import java.security.AlgorithmParameters;
 import java.security.InvalidAlgorithmParameterException;

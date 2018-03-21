@@ -1,4 +1,4 @@
-package com.EECE412A3;
+package com.VPN;
 
 import java.awt.TextField;
 import java.awt.event.ActionEvent;
@@ -11,8 +11,8 @@ import javax.swing.JScrollPane;
 import javax.swing.JTextArea;
 import javax.swing.SpringLayout;
 
-import com.EECE412A3.Client.Client;
-import com.EECE412A3.Client.ClientInterface;
+import com.VPN.Client.Client;
+import com.VPN.Client.ClientInterface;
 
 
 

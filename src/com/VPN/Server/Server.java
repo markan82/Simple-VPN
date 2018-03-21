@@ -1,5 +1,5 @@
+package com.VPN.Server;
 
-package com.EECE412A3.Server;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
@@ -24,10 +24,10 @@ import javax.crypto.spec.PBEKeySpec;
 import javax.crypto.spec.PBEParameterSpec;
 import javax.xml.bind.DatatypeConverter;
 
-import com.EECE412A3.CryptoInterface;
-import com.EECE412A3.DiffieHellmanHelper;
-import com.EECE412A3.GUIInterface;
-import com.EECE412A3.Helpers;
+import com.VPN.CryptoInterface;
+import com.VPN.DiffieHellmanHelper;
+import com.VPN.GUIInterface;
+import com.VPN.Helpers;
 
 public class Server implements CryptoInterface {
 	
@@ -61,6 +61,7 @@ public class Server implements CryptoInterface {
 	public void endConnection() 
 	{
 	}
+	
 	@Override
 	public void receiveMessages()
 	{
@@ -139,7 +140,7 @@ public class Server implements CryptoInterface {
 			
 			if(connectionSocket == null ) m_gui.connectionClosed();
 			
-			 inputStream = connectionSocket.getInputStream();
+			inputStream = connectionSocket.getInputStream();
 			outputStream = connectionSocket.getOutputStream();
 			//BufferedReader userInputReader = new BufferedReader(new InputStreamReader(System.in));
 			

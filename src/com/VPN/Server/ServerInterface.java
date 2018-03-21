@@ -1,4 +1,4 @@
-package com.EECE412A3.Server;
+package com.VPN.Server;
 
 public interface ServerInterface {
 

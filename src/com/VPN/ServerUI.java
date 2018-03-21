@@ -1,4 +1,4 @@
-package com.EECE412A3;
+package com.VPN;
 
 import java.awt.TextField;
 import java.awt.event.ActionEvent;
@@ -13,7 +13,7 @@ import javax.swing.JScrollPane;
 import javax.swing.JTextArea;
 import javax.swing.SpringLayout;
 
-import com.EECE412A3.Server.Server;
+import com.VPN.Server.Server;
 
 @SuppressWarnings("serial")
 public class ServerUI extends JFrame implements ActionListener, GUIInterface {
