@@ -12,6 +12,8 @@ import java.security.KeyPair;
 import java.security.NoSuchAlgorithmException;
 import java.security.PublicKey;
 import java.security.spec.InvalidKeySpecException;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
 
 import javax.crypto.BadPaddingException;
 import javax.crypto.Cipher;
@@ -70,15 +72,23 @@ public class Server implements CryptoInterface {
 			try
 			{
 				byte[] clientInput = readFromClient(inputStream);
+				//m_gui.printf("clientInput length:" + clientInput.length);
+				if(clientInput.length == 0) {
+					connectionSocket.close();
+					m_gui.connectionClosed();
+					break;
+				}
 				m_gui.printf("Receiving encrypted bytes: " + Helpers.ByteToString(clientInput));
 				String clientInputDecrypted = new String(communicationDecryptionCipher.doFinal(clientInput));
 				m_gui.printf( clientId + " > " + clientInputDecrypted);
 			}
 			catch(Exception e )
 			{
-				
+				e.printStackTrace();
 			}
 		}
+		
+		acceptConnection();
 	}
 
 	@Override
@@ -132,7 +142,7 @@ public class Server implements CryptoInterface {
 	@Override
 	public void acceptConnection()
 	{
-		
+		//ExecutorService pool = Executors.newFixedThreadPool(5);
 		try
 		{
 			if( serverSocket != null )
@@ -209,11 +219,11 @@ public class Server implements CryptoInterface {
 		{
 			m_gui.connectionClosed();;
 		} finally {
-			try {
+			/*try {
 				connectionSocket.close();
 			} catch (IOException e) {
 				e.printStackTrace();
-			}
+			}*/
 		}
 	}
 	
